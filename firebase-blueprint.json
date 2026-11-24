@@ -1,0 +1,188 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User preferences and Pomodoro timer settings scoped to an authenticated user.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated Firebase Auth UID of the owner."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name shown in the profile card (1-80 chars)."
+        },
+        "focusMinutes": {
+          "type": "integer",
+          "description": "Focus session duration in minutes (1-120)."
+        },
+        "shortBreakMinutes": {
+          "type": "integer",
+          "description": "Short break duration in minutes (1-60)."
+        },
+        "longBreakMinutes": {
+          "type": "integer",
+          "description": "Long break duration in minutes (1-60)."
+        },
+        "dailyGoalMinutes": {
+          "type": "integer",
+          "description": "Daily focus goal in minutes (15-720)."
+        },
+        "hapticsEnabled": {
+          "type": "boolean",
+          "description": "Whether haptic vibration feedback triggers on timer events."
+        },
+        "autoStartBreak": {
+          "type": "boolean",
+          "description": "Whether break timer starts automatically after a focus session."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp set via FieldValue.serverTimestamp() on creation."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp set via FieldValue.serverTimestamp() on creation and update."
+        }
+      },
+      "required": [
+        "userId",
+        "displayName",
+        "focusMinutes",
+        "shortBreakMinutes",
+        "longBreakMinutes",
+        "dailyGoalMinutes",
+        "hapticsEnabled",
+        "autoStartBreak",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "FocusSession": {
+      "title": "FocusSession",
+      "description": "An immutable logged Pomodoro focus or break session for daily history and analytics.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated Firebase Auth UID of the session owner."
+        },
+        "title": {
+          "type": "string",
+          "description": "Session title or linked task name (1-120 chars)."
+        },
+        "category": {
+          "type": "string",
+          "enum": ["DEEP_WORK", "STUDY", "CODING", "READING", "CREATIVE", "OTHER"],
+          "description": "Focus category tag."
+        },
+        "durationMinutes": {
+          "type": "integer",
+          "description": "Completed focus duration in minutes (1-180)."
+        },
+        "sessionType": {
+          "type": "string",
+          "enum": ["FOCUS", "SHORT_BREAK", "LONG_BREAK"],
+          "description": "Type of timer session logged."
+        },
+        "dateKey": {
+          "type": "string",
+          "description": "Local calendar date in YYYY-MM-DD format for daily aggregation and streak calculation."
+        },
+        "taskId": {
+          "type": "string",
+          "description": "Optional linked FocusTask document ID."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp set via FieldValue.serverTimestamp() on creation."
+        }
+      },
+      "required": [
+        "userId",
+        "title",
+        "category",
+        "durationMinutes",
+        "sessionType",
+        "dateKey",
+        "createdAt"
+      ]
+    },
+    "FocusTask": {
+      "title": "FocusTask",
+      "description": "A focusable task with estimated and completed Pomodoro counts.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated Firebase Auth UID of the task owner."
+        },
+        "title": {
+          "type": "string",
+          "description": "Task title (1-120 chars)."
+        },
+        "category": {
+          "type": "string",
+          "enum": ["DEEP_WORK", "STUDY", "CODING", "READING", "CREATIVE", "OTHER"],
+          "description": "Task focus category."
+        },
+        "estimatedPomodoros": {
+          "type": "integer",
+          "description": "Planned Pomodoro count for this task (1-20)."
+        },
+        "completedPomodoros": {
+          "type": "integer",
+          "description": "Completed Pomodoro sessions credited to this task (0-100)."
+        },
+        "completed": {
+          "type": "boolean",
+          "description": "Whether the task has been marked done."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp set via FieldValue.serverTimestamp() on creation."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp set via FieldValue.serverTimestamp() on creation and update."
+        }
+      },
+      "required": [
+        "userId",
+        "title",
+        "category",
+        "estimatedPomodoros",
+        "completedPomodoros",
+        "completed",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Per-user profile and timer preferences document."
+    },
+    "/users/{userId}/sessions/{sessionId}": {
+      "schema": {
+        "$ref": "#/entities/FocusSession"
+      },
+      "description": "Append-only subcollection of completed focus sessions for a user."
+    },
+    "/users/{userId}/tasks/{taskId}": {
+      "schema": {
+        "$ref": "#/entities/FocusTask"
+      },
+      "description": "Subcollection of Pomodoro tasks owned by a user."
+    }
+  }
+}

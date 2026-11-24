@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name">FocusPulse</string>
+
+    <!-- Auth Screen -->
+    <string name="auth_eyebrow">PRECISION FOCUS STUDIO</string>
+    <string name="auth_headline">깊은 몰입의 리듬을\n기록하세요</string>
+    <string name="auth_subtitle">뽀모도로 타이머, 할 일 집중 관리, 일일 몰입 통계를 Google 계정으로 안전하게 동기화합니다.</string>
+    <string name="auth_feature_timer">정밀 크로노미터 뽀모도로 타이머</string>
+    <string name="auth_feature_tasks">할 일 연동 및 세션 자동 카운트</string>
+    <string name="auth_feature_sync">일일 기록·연속 스트릭 클라우드 동기화</string>
+    <string name="auth_sign_in_google">Google 계정으로 계속하기</string>
+    <string name="auth_checking_session">로그인 상태 확인 중…</string>
+    <string name="auth_error_missing_client_id">Google 로그인 구성이 누락되었습니다. Firebase 설정을 확인해 주세요.</string>
+    <string name="auth_error_generic">로그인 중 오류가 발생했습니다. 다시 시도해 주세요.</string>
+
+    <!-- Navigation -->
+    <string name="nav_timer">타이머</string>
+    <string name="nav_tasks">할 일</string>
+    <string name="nav_stats">기록</string>
+    <string name="nav_settings">설정</string>
+
+    <!-- Timer Modes & Controls -->
+    <string name="mode_focus">집중</string>
+    <string name="mode_short_break">짧은 휴식</string>
+    <string name="mode_long_break">긴 휴식</string>
+    <string name="timer_status_running">몰입 진행 중</string>
+    <string name="timer_status_paused">일시 정지됨</string>
+    <string name="timer_status_ready">시작할 준비가 되었어요</string>
+    <string name="timer_status_break_running">잠시 숨 고르는 시간</string>
+    <string name="timer_action_start">시작</string>
+    <string name="timer_action_pause">일시정지</string>
+    <string name="timer_action_resume">계속하기</string>
+    <string name="timer_action_reset">초기화</string>
+    <string name="timer_action_complete">완료 기록</string>
+    <string name="timer_action_skip">건너뛰기</string>
+    <string name="timer_today_goal_fmt">오늘 %1$d / %2$d분</string>
+    <string name="timer_cycle_fmt">사이클 %1$d / 4</string>
+    <string name="timer_select_focus_target">집중 대상 선택</string>
+    <string name="timer_free_focus">자유 집중 세션</string>
+    <string name="timer_sheet_title">무엇에 집중할까요?</string>
+    <string name="timer_custom_session_label">세션 이름 (선택)</string>
+    <string name="timer_custom_session_placeholder">예: Compose 레이아웃 구현</string>
+    <string name="timer_apply_target">적용</string>
+    <string name="timer_session_saved_fmt">%1$d분 집중 세션이 기록되었습니다</string>
+    <string name="timer_break_complete">휴식이 끝났어요! 다시 집중해 볼까요?</string>
+    <string name="timer_need_one_minute">최소 1분 이상 집중해야 기록할 수 있습니다</string>
+
+    <!-- Categories -->
+    <string name="cat_deep_work">딥워크</string>
+    <string name="cat_coding">코딩</string>
+    <string name="cat_study">공부</string>
+    <string name="cat_reading">독서</string>
+    <string name="cat_creative">기획·창작</string>
+    <string name="cat_other">기타</string>
+
+    <!-- Tasks Screen -->
+    <string name="tasks_title">집중 할 일</string>
+    <string name="tasks_subtitle">할 일을 탭해 타이머에 바로 연결하세요</string>
+    <string name="tasks_add">할 일 추가</string>
+    <string name="tasks_edit">할 일 수정</string>
+    <string name="tasks_active_section">진행 중 (%1$d)</string>
+    <string name="tasks_completed_section">완료됨 (%1$d)</string>
+    <string name="tasks_empty_title">아직 등록된 할 일이 없어요</string>
+    <string name="tasks_empty_desc">오늘 집중할 작업을 추가하고 뽀모도로 목표로 관리해 보세요.</string>
+    <string name="tasks_active_badge">집중 중</string>
+    <string name="tasks_field_title">할 일 이름</string>
+    <string name="tasks_field_title_hint">예: 안드로이드 앱 설계 정리</string>
+    <string name="tasks_field_category">카테고리</string>
+    <string name="tasks_field_pomodoros">목표 뽀모도로 수</string>
+    <string name="tasks_pomo_count_fmt">%1$d / %2$d 세션</string>
+    <string name="tasks_save">저장</string>
+    <string name="tasks_cancel">취소</string>
+    <string name="tasks_delete_cd">할 일 삭제</string>
+    <string name="tasks_edit_cd">할 일 수정</string>
+    <string name="tasks_toggle_cd">완료 상태 전환</string>
+
+    <!-- Stats & History Screen -->
+    <string name="stats_title">집중 기록</string>
+    <string name="stats_kpi_today">오늘 집중</string>
+    <string name="stats_kpi_streak">연속 집중</string>
+    <string name="stats_kpi_sessions">누적 세션</string>
+    <string name="stats_kpi_goal">오늘 목표</string>
+    <string name="stats_minutes_fmt">%1$d분</string>
+    <string name="stats_days_fmt">%1$d일</string>
+    <string name="stats_count_fmt">%1$d회</string>
+    <string name="stats_percent_fmt">%1$d%%</string>
+    <string name="stats_weekly_title">최근 7일 집중 추이</string>
+    <string name="stats_weekly_goal_label">목표 %1$d분</string>
+    <string name="stats_category_title">카테고리별 분포</string>
+    <string name="stats_history_title">최근 집중 세션</string>
+    <string name="stats_empty_title">아직 기록된 세션이 없어요</string>
+    <string name="stats_empty_desc">타이머에서 첫 번째 집중 세션을 완료하면 이곳에 통계와 타임라인이 쌓입니다.</string>
+    <string name="stats_delete_session_cd">세션 기록 삭제</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">설정</string>
+    <string name="settings_cloud_synced">클라우드 동기화 활성화됨</string>
+    <string name="settings_sign_out">로그아웃</string>
+    <string name="settings_timer_section">타이머 시간 설정</string>
+    <string name="settings_focus_duration">집중 시간</string>
+    <string name="settings_short_break_duration">짧은 휴식</string>
+    <string name="settings_long_break_duration">긴 휴식</string>
+    <string name="settings_daily_goal">하루 집중 목표</string>
+    <string name="settings_preferences_section">동작 옵션</string>
+    <string name="settings_haptics_title">진동 피드백</string>
+    <string name="settings_haptics_desc">세션 시작 및 완료 시 부드러운 진동으로 알려줍니다.</string>
+    <string name="settings_auto_break_title">휴식 자동 시작</string>
+    <string name="settings_auto_break_desc">집중 세션이 끝나면 자동으로 휴식 타이머를 시작합니다.</string>
+    <string name="settings_saved_toast">설정이 클라우드에 저장되었습니다</string>
+    <string name="settings_save_button">설정 저장</string>
+
+    <!-- Common -->
+    <string name="common_retry">다시 시도</string>
+    <string name="common_loading">데이터를 불러오는 중…</string>
+    <string name="common_error_load">데이터를 불러오지 못했습니다.</string>
+    <string name="common_decrease_cd">감소</string>
+    <string name="common_increase_cd">증가</string>
+</resources>

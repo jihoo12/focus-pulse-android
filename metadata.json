@@ -1,0 +1,6 @@
+{
+  "name": "FocusPulse",
+  "description": "Pomodoro focus timer with daily session logs, streaks, and productivity insights synced to the cloud.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
